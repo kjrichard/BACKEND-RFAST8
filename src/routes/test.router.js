@@ -5,9 +5,14 @@ const  adolecenciaController  = require("../controllers/adolecencia.controller")
 const  juventudController  = require("../controllers/juventud.controller");
 const  adultezController = require("../controllers/adultez.contorller");
 const  vejezController = require("../controllers/vejez.controlller");
+const  testController = require("../controllers/test.controller");
 
 
 const router = Router();
+
+// test de conexio
+router.get('/', testController.test )
+
 
 
 //Rutas para Infancia
