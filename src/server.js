@@ -17,7 +17,7 @@ class Server {
         this.app.use(express.json({ extende: true, parameterLimit: 10000000000000 , limit: '100000mb'}));
         this.app.use(morgan("dev"));
         //this.validarHeadres();
-        this.validarMetodos();
+        //this.validarMetodos();
         this.politicaSeguridad();
     }
 

@@ -1,9 +1,8 @@
-
 const { QueryTypes } = require('sequelize');
 const sequelize = require('../BD-RFAS8/conexiondb');
 
 
-exports.primeraInfancia = async (req, res) => {
+exports.infancia = async (req, res) => {
 try {
     const query = `
     SELECT TOP (1000)
@@ -42,7 +41,7 @@ try {
     JOIN fac_p_control g ON g.IPS = f.IPS
     JOIN fac_p_centroproduccion h ON h.CODIGO = f.CENTROPROD
     JOIN fac_p_cups j ON j.CODIGO = f.CODIGO_CUPS
-    WHERE h.CODIGO = 1600 
+    WHERE h.CODIGO = 1601 
 `
 const resul = await sequelize.query(query, {type: QueryTypes.SELECT});
 console.log(resul);

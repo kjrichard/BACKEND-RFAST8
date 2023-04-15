@@ -1,12 +1,11 @@
-
 const { QueryTypes } = require('sequelize');
 const sequelize = require('../BD-RFAS8/conexiondb');
 
 
-exports.primeraInfancia = async (req, res) => {
+exports.vejez = async (req, res) => {
 try {
     const query = `
-    SELECT TOP (1000)
+    SELECT TOP (10000)
     f.IPS,
     g.NOMBRE AS NOMBRE_IPS,
     a.TIPDOCUM AS TIPO_DOCUMENTO,
@@ -42,7 +41,7 @@ try {
     JOIN fac_p_control g ON g.IPS = f.IPS
     JOIN fac_p_centroproduccion h ON h.CODIGO = f.CENTROPROD
     JOIN fac_p_cups j ON j.CODIGO = f.CODIGO_CUPS
-    WHERE h.CODIGO = 1600 
+    WHERE h.CODIGO = 1605
 `
 const resul = await sequelize.query(query, {type: QueryTypes.SELECT});
 console.log(resul);
@@ -57,4 +56,3 @@ res.status(200).json({ data: resul})
    return res.status(500).send('Error en el servidor') 
 }
 }
-

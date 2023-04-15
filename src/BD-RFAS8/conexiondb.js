@@ -1,12 +1,3 @@
-port=3000
-
-
-DB_USERNAME=gustavoarias
-DB_PASSWORD=gustavoarias
-DB_SERVER=10.10.10.10
-DB_PORT=1433
-DB_NAME=RFAST8
-
 const { Sequelize } = require("sequelize");
 
 sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
